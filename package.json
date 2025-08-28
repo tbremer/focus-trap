@@ -28,6 +28,7 @@
 		"lint": "biome check .",
 		"format": "biome format .",
 		"type-tests": "npm run build && tsd -p tsd.json",
+		"agent-commit": "bash ./scripts/agent-commit.sh",
 		"prepublishOnly": "npm run build && npm run test && npm run type-tests"
 	},
 	"repository": {
