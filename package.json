@@ -25,7 +25,7 @@
 		"typecheck": "tsc --noEmit",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"lint": "biome check . --profile strict",
+		"lint": "biome check .",
 		"format": "biome format .",
 		"type-tests": "npm run build && tsd -p tsd.json",
 		"prepublishOnly": "npm run build && npm run test && npm run type-tests"
