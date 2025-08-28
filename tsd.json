@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true
+  },
+  "scripts": {
+    "test": "tsd -p ./tsd.json"
+  },
+  "packages": [
+    "./dist/types"
+  ]
+}
