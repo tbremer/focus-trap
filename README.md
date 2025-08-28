@@ -5,7 +5,7 @@ Small focus trap utility and React hook.
 Usage
 
 ```ts
-import { createFocusTrap } from "focus-trap";
+import { createFocusTrap } from "@tbremer/focus-trap";
 
 const el = document.getElementById("dialog")!;
 const trap = createFocusTrap(el);
@@ -18,7 +18,7 @@ React hook
 
 ```tsx
 import { useRef } from "react";
-import { useFocusTrap } from "focus-trap/react";
+import { useFocusTrap } from "@tbremer/focus-trap/react";
 
 function Example() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -31,10 +31,8 @@ Development
 
 Install dependencies and run tests:
 
-```fish
+```shell
 npm ci
 npm run test
 ```
-
-Note: this project is published as the package `focus-trap` (previously `use-focus-trap`).
 
