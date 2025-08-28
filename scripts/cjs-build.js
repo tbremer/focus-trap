@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
 
 // create a tiny CommonJS wrapper that loads the ESM build
 const esmMain = path.join(__dirname, "..", "dist", "esm", "entry.js");
@@ -13,9 +13,9 @@ function writeWrapper(esmPath, outPath) {
 		return;
 	}
 
-	const content = `"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mod = require(${JSON.stringify("./" + path.relative(path.join(__dirname, ".."), esmPath))});
+	const rel = `./${path.relative(path.join(__dirname, ".."), esmPath)}`;
+	const content = `Object.defineProperty(exports, "__esModule", { value: true });
+const mod = require(${JSON.stringify(rel)});
 for (const k in mod) exports[k] = mod[k];
 `;
 

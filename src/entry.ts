@@ -1,5 +1,6 @@
-export { getFocusableElements } from "./focus-trap";
 import { createFocusTrap } from "./focus-trap";
+
+export { getFocusableElements } from "./focus-trap";
 
 // Re-export createFocusTrap for public API
 export { createFocusTrap };
