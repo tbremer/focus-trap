@@ -1,0 +1,12 @@
+{
+  "format": {
+    "indentWidth": 2,
+    "singleQuote": true
+  },
+  "lint": {
+    "rules": {
+      "recommended": true,
+      "strict": true
+    }
+  }
+}
