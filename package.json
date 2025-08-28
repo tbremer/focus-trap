@@ -1,0 +1,61 @@
+{
+	"name": "@tbremer/focus-trap",
+	"version": "0.0.0-development",
+	"description": "A small focus trap utility and React hook",
+	"main": "dist/index.cjs.js",
+	"module": "dist/esm/entry.js",
+	"types": "dist/types/entry.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/esm/entry.js",
+			"require": "./dist/index.cjs.js",
+			"types": "./dist/types/entry.d.ts"
+		},
+		"./react": {
+			"import": "./dist/esm/react.js",
+			"require": "./dist/react.cjs.js",
+			"types": "./dist/types/react.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.json && node ./scripts/cjs-build.js",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"lint": "biome check . --profile strict",
+		"format": "biome format .",
+		"type-tests": "npm run build && tsd -p tsd.json",
+		"prepublishOnly": "npm run build && npm run test && npm run type-tests"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tbremer/use-focus-trap.git"
+	},
+	"keywords": [
+		"focus",
+		"trap",
+		"react",
+		"accessibility",
+		"hook"
+	],
+	"author": "",
+	"license": "MIT",
+	"peerDependencies": {
+		"react": ">=17"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@testing-library/dom": "^8.0.0",
+		"@types/node": "^20.0.0",
+		"@types/react": "^18.2.0",
+		"@types/testing-library__dom": "^7.5.0",
+		"jsdom": "^26.1.0",
+		"tsd": "^0.27.0",
+		"typescript": "^5.3.0",
+		"vitest": "^1.2.0"
+	},
+	"packageManager": "pnpm@10.15.0+sha512.486ebc259d3e999a4e8691ce03b5cac4a71cbeca39372a9b762cb500cfdf0873e2cb16abe3d951b1ee2cf012503f027b98b6584e4df22524e0c7450d9ec7aa7b"
+}
